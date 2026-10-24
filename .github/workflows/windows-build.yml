@@ -1,0 +1,29 @@
+name: Windows build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run tauri:build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rik-notch-windows
+          path: |
+            src-tauri/target/release/rik-notch.exe
+            src-tauri/target/release/bundle/nsis/*.exe
+          if-no-files-found: error

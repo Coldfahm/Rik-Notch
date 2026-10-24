@@ -1,0 +1,9 @@
+# Rik Notch Configuration
+visualiser = true
+bands = 24
+hover_delay_ms = 120
+collapse_delay_ms = 300
+peek_duration_ms = 2500
+peek_enabled = true
+default_page = 0
+monitor = "primary" # Options: "primary" | "cursor"

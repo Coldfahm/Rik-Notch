@@ -1,0 +1,12 @@
+[package]
+name = "rik-notch"
+version = "0.1.0"
+description = "A desktop notch prototype"
+authors = ["Rik Notch contributors"]
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }

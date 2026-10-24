@@ -1,0 +1,6 @@
+{
+  "name": "Rik Notch",
+  "description": "An interactive desktop-notch prototype packaged with Tauri.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
